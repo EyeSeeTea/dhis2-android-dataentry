@@ -3,11 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
+    <org.hisp.dhis.android.dataentry.commons.ui.FontTextInputEditText
+        android:id="@+id/edittext_search_reports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionSearch"
+        android:maxLines="1"
+        app:font="@string/font_name_condensed"
+        android:textSize="@dimen/text_size_medium"
+        android:hint="@string/search"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview_reports"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:clipToPadding="false"/>
 </LinearLayout>

@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 
 import org.hisp.dhis.android.dataentry.DhisApp;
 import org.hisp.dhis.android.dataentry.R;
@@ -19,6 +21,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.OnEditorAction;
 import io.reactivex.functions.Consumer;
 
 public final class ReportsFragment extends BaseFragment implements ReportsView {
@@ -26,6 +29,9 @@ public final class ReportsFragment extends BaseFragment implements ReportsView {
 
     @BindView(R.id.recyclerview_reports)
     RecyclerView recyclerViewReports;
+
+    @BindView(R.id.edittext_search_reports)
+    EditText editTextSearch;
 
     @Inject
     ReportsPresenter presenter;
@@ -49,12 +55,13 @@ public final class ReportsFragment extends BaseFragment implements ReportsView {
         ((DhisApp) context.getApplicationContext()).userComponent()
                 .plus(new ReportsModule(getFormUid()))
                 .inject(this);
+
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-            @Nullable Bundle savedInstanceState) {
+                             @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_reports, container, false);
     }
 
@@ -89,6 +96,16 @@ public final class ReportsFragment extends BaseFragment implements ReportsView {
         reportsAdapter = new ReportsAdapter(getContext());
         recyclerViewReports.setLayoutManager(layoutManager);
         recyclerViewReports.setAdapter(reportsAdapter);
+    }
+
+    @OnEditorAction(R.id.edittext_search_reports)
+    protected boolean onSearchAction(int actionId) {
+        if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+            // TODO: performSearch(editText.getText());
+            return true;
+        }
+
+        return false;
     }
 
     private String getFormUid() {

@@ -40,8 +40,9 @@
     <string name="enter_positive_integer_or_zero">Enter positive integer or zero</string>
     <string name="enter_positive_integer">Enter positive integer</string>
     <string name="enter_date">Enter date</string>
+    <string name="search">Search…</string>
 
-    <!-- Button labels: -->
+    <!-- Button label: -->
     <string name="today_date">Today\'s date</string>
     <string name="pick_date">Pick date</string>
     <!-- End section: Forms -->

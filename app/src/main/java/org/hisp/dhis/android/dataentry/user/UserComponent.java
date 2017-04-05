@@ -9,6 +9,8 @@ import org.hisp.dhis.android.dataentry.main.home.HomeComponent;
 import org.hisp.dhis.android.dataentry.main.home.HomeModule;
 import org.hisp.dhis.android.dataentry.reports.ReportsComponent;
 import org.hisp.dhis.android.dataentry.reports.ReportsModule;
+import org.hisp.dhis.android.dataentry.search.SearchComponent;
+import org.hisp.dhis.android.dataentry.search.SearchModule;
 
 import dagger.Subcomponent;
 
@@ -26,4 +28,7 @@ public interface UserComponent {
 
     @NonNull
     ReportsComponent plus(@NonNull ReportsModule reportsModule);
+
+    @NonNull
+    SearchComponent plus(@NonNull SearchModule searchModule);
 }

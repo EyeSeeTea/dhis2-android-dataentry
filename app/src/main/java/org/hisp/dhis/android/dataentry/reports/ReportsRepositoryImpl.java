@@ -85,6 +85,8 @@ final class ReportsRepositoryImpl implements ReportsRepository {
                         .toList().toFlowable());
     }
 
+
+
     private ReportViewModel.Status fromState(String state) {
         switch (State.valueOf(state)) {
             case TO_POST:

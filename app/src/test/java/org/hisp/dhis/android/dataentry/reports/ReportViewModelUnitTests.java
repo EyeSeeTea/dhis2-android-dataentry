@@ -27,7 +27,7 @@ public class ReportViewModelUnitTests {
 
         try {
             reportViewModel.labels().add("another_label");
-            fail("list of labels should be immutable");
+            fail("list of label should be immutable");
         } catch (UnsupportedOperationException exception) {
             // expected
         }

@@ -49,10 +49,14 @@ public final class StringUtils {
             }
         }
 
+        return fromHtml(cache.toString());
+    }
+
+    private static Spanned fromHtml(String s) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return Html.fromHtml(cache.toString(), Html.FROM_HTML_MODE_LEGACY);
+            return Html.fromHtml(s, Html.FROM_HTML_MODE_LEGACY);
         } else {
-            return Html.fromHtml(cache.toString());
+            return Html.fromHtml(s);
         }
     }
 }

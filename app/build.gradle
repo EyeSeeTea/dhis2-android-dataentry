@@ -115,7 +115,7 @@ android {
             // install debug and release builds at the same time
             applicationIdSuffix = ".debug"
 
-            // jacoco test coverage reports both for
+            // jacoco test coverage search both for
             // androidTest and test source sets
             testCoverageEnabled = true
 
