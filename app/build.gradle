@@ -128,7 +128,7 @@ android {
         }
         release {
             // enabling crashlytics for debug builds
-            ext.enableCrashlytics = true
+            ext.enableCrashlytics = false
         }
     }
 
